@@ -16,7 +16,8 @@ class CalculatorBloc extends Bloc<CalculatorBlocEvent, CalculatorBlocState>  {
   FutureOr<void> _calculate(CalculatePressed event, Emitter<CalculatorBlocState> emit) async{
 
     emit(const CalculationInitialized());
-
+    await Future.delayed(const Duration(seconds: 3));
+    
     try {
 
       var result = double.parse(event.firstNumber) + double.parse(event.secondNumber);
